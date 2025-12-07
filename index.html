@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog - Criptosistemas de Clave Pública</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="public/css/styles.css" />
   <meta name="description"
     content="Blog sobre criptosistemas de clave pública: qué son, cómo funcionan, RSA, ECC, casos prácticos y recomendaciones de implementación." />
 </head>
@@ -13,15 +13,15 @@
 <body>
   <header>
     <h1>Criptografía Moderna</h1>
-  
+
     <!-- Buscador en header -->
     <input type="text" id="searchInput" placeholder="🔍 Buscar..." />
-  
+
     <div class="header-right">
       <button id="darkToggle">🌙</button>
       <button class="menu-toggle" id="menuBtn">☰</button>
     </div>
-  
+
     <!-- Menú lateral desplegable -->
     <nav id="sideMenu">
       <ul>
@@ -32,7 +32,7 @@
         <li><a href="#entrada5">Recomendaciones</a></li>
       </ul>
     </nav>
-  
+
     <!-- Fondo oscuro clic-cierra menú -->
     <div id="menuOverlay"></div>
   </header>
@@ -48,7 +48,7 @@
       </div>
     </div>
   </section>
-  
+
   <main>
     <article id="entrada1" data-entry="entrada1">
       <h2>Criptografía de Clave Pública: La Revolución del Cifrado</h2>
@@ -62,22 +62,20 @@
         Su invención resolvió el problema del intercambio seguro de claves y permitió la creación de firmas digitales,
         autenticación y protocolos como TLS/SSL que aseguran la web moderna.
       </p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Public_key_encryption.svg"
-        alt="Esquema clave pública" />
+      <img src="public/img/cifrado-de-clave-publica.jpg" alt="Esquema clave pública" />
       <p>
         Para profundizar visualmente, este vídeo explica la idea con ejemplos sencillos.
       </p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/uPqK9W_wNKI?si=z_Xk0erbSSmQ_lM9"
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/8ZXuUa9ldNI?si=wXHvhVYNgMTkE3HE"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      
+
       <div class="entry-meta">
-        <span class="author">Autor: Roger A. Alighieri</span>
-        <span class="date">Publicado: 06/12/2025 – 09:43</span>
+        <span class="author"><strong>Autor:</strong> Roger Rodriguez</span>
+        <span class="date"><strong>Publicado:</strong> 06/12/2025 – 09:43</span>
         <span class="views" id="views-entrada1">👁 Lecturas: 0</span>
       </div>
-      
       <div class="reactions" data-entry="entrada1">
         <button class="react" data-type="like">👍</button>
         <span id="count-like-entrada1">0</span>
@@ -86,14 +84,18 @@
         <button class="react" data-type="secure">🔐</button>
         <span id="count-secure-entrada1">0</span>
       </div>
-      
-      </article>
+    </article>
 
-    <article id="entrada2">
+    <article id="entrada2" data-entry="entrada2">
       <h2>Cómo Funciona: RSA, ECC y Algoritmos Representativos</h2>
-      <p>
-        Entre los algoritmos más usados están:
-      </p>
+      <p><strong>🔍 Funcionamiento básico:</strong></p>
+      <ul>
+        <li>1. El receptor genera un par de claves: pública y privada.</li>
+        <li>2. Publica su clave pública en un servidor o directorio.</li>
+        <li>3. Cualquier emisor cifra el mensaje usando esa clave pública.</li>
+        <li>4. Solo el receptor puede descifrar el mensaje con su clave privada.</li>
+      </ul>
+      </p><strong>Entre los algoritmos más usados están:</strong></p>
       <ul>
         <li><strong>RSA</strong>: Basado en la factorización de enteros. Genera claves (n, e, d) donde la seguridad
           depende de la dificultad de factorizar n (producto de dos primos grandes).</li>
@@ -102,20 +104,40 @@
         <li><strong>ElGamal</strong> y <strong>Diffie–Hellman</strong>: Usados para intercambio de claves y cifrado
           probabilístico.</li>
       </ul>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/EllipticCurve.svg" alt="Curvas elípticas" />
+      <img src="public/img/Elliptic-Curve.webp" alt="Curvas elípticas" />
       <p>
-        El flujo general implica: <em>generación de par de claves → publicación de la clave pública → cifrado con la
+        <strong>El flujo general implica:</strong><em> generación de par de claves → publicación de la clave pública →
+          cifrado con la
           pública → descifrado con la privada</em>. Para firmas, el emisor firma con su privada y cualquier receptor
         verifica con la pública.
       </p>
       <p>
-        Aquí tienes una explicación técnica sobre por qué estas operaciones son difíciles de revertir sin la clave
-        privada.
+        Aquí tienes una explicación técnica detallada sobre el funcionamiento de este proceso criptográfico y sus
+        implicaciones en la seguridad del sistema.
       </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/CMe0COxZxb0?si=xdLV1NS3-aAt7OYm"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <div class="entry-meta">
+        <span class="author"><strong>Autor:</strong> Roger Rodriguez</span>
+        <span class="date"><strong>Publicado:</strong> 06/12/2025 – 10:43</span>
+        <span class="views" id="views-entrada2">👁 Lecturas: 0</span>
+      </div>
+      <div class="reactions" data-entry="entrada2">
+        <button class="react" data-type="like">👍</button>
+        <span id="count-like-entrada2">0</span>
+        <button class="react" data-type="love">❤️</button>
+        <span id="count-love-entrada2">0</span>
+        <button class="react" data-type="secure">🔐</button>
+        <span id="count-secure-entrada2">0</span>
+      </div>
     </article>
 
-    <article id="entrada3">
+    <article id="entrada3" data-entry="entrada3">
       <h2>Ventajas, Desventajas y Diferencias con Criptosistemas Simétricos</h2>
+      <img src="public/img/comparativa-sim-asim.jpg" alt="Cuadro comparativo" />
       <p>
         <strong>Ventajas:</strong>
       </p>
@@ -136,9 +158,29 @@
         asimétrico hay par de claves. En la práctica, ambos se combinan: asimétrico para intercambio de claves,
         simétrico (AES) para cifrado de datos por su eficiencia.
       </p>
+      <p>
+        Para profundizar visualmente, este vídeo explica la idea con ejemplos sencillos.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/wDpqrasDmxM?si=hqSwc1Z8EyZtT7Rn"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="entry-meta">
+        <span class="author"><strong>Autor:</strong> Roger Rodriguez</span>
+        <span class="date"><strong>Publicado:</strong> 06/12/2025 – 11:43</span>
+        <span class="views" id="views-entrada3">👁 Lecturas: 0</span>
+      </div>
+      <div class="reactions" data-entry="entrada3">
+        <button class="react" data-type="like">👍</button>
+        <span id="count-like-entrada3">0</span>
+        <button class="react" data-type="love">❤️</button>
+        <span id="count-love-entrada3">0</span>
+        <button class="react" data-type="secure">🔐</button>
+        <span id="count-secure-entrada3">0</span>
+      </div>
     </article>
 
-    <article id="entrada4">
+    <article id="entrada4" data-entry="entrada4">
       <h2>Caso Práctico: RSA + AES en Transacciones Web</h2>
       <p>
         Un uso típico es HTTPS. Cuando el navegador se conecta a un servidor seguro, el servidor presenta un certificado
@@ -151,39 +193,65 @@
         línea,
         mensajería segura, firma de código y sistemas de identidad.
       </p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/uPqK9W_wNKI?si=z_Xk0erbSSmQ_lM9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <p>
         <strong>Cómo implementarlo:</strong> Use librerías maduradas (OpenSSL, libsodium, WebCrypto API). Evite escribir
         su propia criptografía desde cero.
       </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/SnWFMFp4TQ0?si=y4yvt-yZVA1fI0zF"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <div class="entry-meta">
+        <span class="author"><strong>Autor:</strong> Roger Rodriguez</span>
+        <span class="date"><strong>Publicado:</strong> 06/12/2025 – 12:43</span>
+        <span class="views" id="views-entrada4">👁 Lecturas: 0</span>
+      </div>
+      <div class="reactions" data-entry="entrada4">
+        <button class="react" data-type="like">👍</button>
+        <span id="count-like-entrada4">0</span>
+        <button class="react" data-type="love">❤️</button>
+        <span id="count-love-entrada4">0</span>
+        <button class="react" data-type="secure">🔐</button>
+        <span id="count-secure-entrada4">0</span>
+      </div>
     </article>
 
-    <article id="entrada5">
+    <article id="entrada5" data-entry="entrada5">
       <h2>Observaciones y Recomendaciones para Implementación</h2>
-      <p>
-        - Seleccionar tamaños de clave actuales: RSA ≥ 2048 bits (ideal 3072+), curvas ECC recomendadas: P-256,
-        P-384 o curvas certificadas según el estándar.
-      </p>
-      <p>
-        - Mantener bibliotecas actualizadas, usar módulos de hardware (HSM o Secure Enclave) cuando sea necesario y
-        proteger la clave privada con controles de acceso y cifrado en reposo.
-      </p>
-      <p>
-        - Evitar algoritmos obsoletos (p. ej. RSA con PKCS#1 v1.5 sin OAEP, o curvas no recomendadas). Realizar pruebas
-        de auditoría y revisión por pares.
-      </p>
-      <p>
-        - Para compatibilidad y rendimiento, combine asimétrico para establecimiento de sesión y simétrico para
-        cifrado de datos en bloque.
-      </p>
+      <ul>
+        <li>Seleccionar tamaños de clave actuales: RSA ≥ 2048 bits (ideal 3072+), curvas ECC recomendadas: P-256, P-384
+          o curvas certificadas según el estándar.</li>
+        <li>Mantener bibliotecas actualizadas, usar módulos de hardware (HSM o Secure Enclave) cuando sea necesario y
+          proteger la clave privada con controles de acceso y cifrado en reposo.</li>
+        <li>Evitar algoritmos obsoletos (p. ej. RSA con PKCS#1 v1.5 sin OAEP, o curvas no recomendadas). Realizar
+          pruebas de auditoría y revisión por pares.</li>
+        <li>Para compatibilidad y rendimiento, combine asimétrico para establecimiento de sesión y simétrico para
+          cifrado de datos en bloque.</li>
+      </ul>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/TbRDxj1iCnU?si=Li6NL1wytXK8jrfv"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="entry-meta">
+        <span class="author"><strong>Autor:</strong> Roger Rodriguez</span>
+        <span class="date"><strong>Publicado:</strong> 06/12/2025 – 13:43</span>
+        <span class="views" id="views-entrada5">👁 Lecturas: 0</span>
+      </div>
+      <div class="reactions" data-entry="entrada5">
+        <button class="react" data-type="like">👍</button>
+        <span id="count-like-entrada5">0</span>
+        <button class="react" data-type="love">❤️</button>
+        <span id="count-love-entrada5">0</span>
+        <button class="react" data-type="secure">🔐</button>
+        <span id="count-secure-entrada5">0</span>
+      </div>
     </article>
-
     <section id="comentarios">
       <h2>Comentarios</h2>
       <script src="https://utteranc.es/client.js" repo="rogeralighieri/blog_cifrado_asimetrico" issue-term="pathname"
         theme="github-light" crossorigin="anonymous" async></script>
     </section>
-
   </main>
 
   <button id="topBtn" aria-label="Volver arriba">↑</button>
@@ -192,7 +260,7 @@
     <p>© 2025 Blog Criptografía - By Roger Rodriguez</p>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script src="public/js/scripts.js"></script>
 </body>
 
 </html>
