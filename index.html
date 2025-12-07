@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Criptosistemas de Clave Pública</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description"
+    content="Blog sobre criptosistemas de clave pública: qué son, cómo funcionan, RSA, ECC, casos prácticos y recomendaciones de implementación." />
+</head>
+
+<body>
+  <header>
+    <h1>Criptografía Moderna</h1>
+  
+    <!-- Buscador en header -->
+    <input type="text" id="searchInput" placeholder="🔍 Buscar..." />
+  
+    <div class="header-right">
+      <button id="darkToggle">🌙</button>
+      <button class="menu-toggle" id="menuBtn">☰</button>
+    </div>
+  
+    <!-- Menú lateral desplegable -->
+    <nav id="sideMenu">
+      <ul>
+        <li><a href="#entrada1">¿Qué es?</a></li>
+        <li><a href="#entrada2">¿Cómo funciona?</a></li>
+        <li><a href="#entrada3">Ventajas</a></li>
+        <li><a href="#entrada4">Caso práctico</a></li>
+        <li><a href="#entrada5">Recomendaciones</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Fondo oscuro clic-cierra menú -->
+    <div id="menuOverlay"></div>
+  </header>
+
+
+  <!-- HERO / PORTADA -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <h1>Criptosistemas de Clave Pública</h1>
+      <p>Seguridad, Confidencialidad y Autenticación en la Era Digital</p>
+      <div class="hero-actions">
+        <a class="cta-link" href="#entrada1">Explorar entradas ↓</a>
+      </div>
+    </div>
+  </section>
+  
+  <main>
+    <article id="entrada1" data-entry="entrada1">
+      <h2>Criptografía de Clave Pública: La Revolución del Cifrado</h2>
+      <p>
+        La criptografía de clave pública (también llamada criptografía asimétrica) utiliza un par de claves:
+        una <strong>pública</strong> para cifrar y una <strong>privada</strong> para descifrar. A diferencia de la
+        criptografía simétrica, no es necesario compartir una clave secreta con el receptor; la clave pública se
+        distribuye libremente mientras la privada permanece protegida por su propietario.
+      </p>
+      <p>
+        Su invención resolvió el problema del intercambio seguro de claves y permitió la creación de firmas digitales,
+        autenticación y protocolos como TLS/SSL que aseguran la web moderna.
+      </p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Public_key_encryption.svg"
+        alt="Esquema clave pública" />
+      <p>
+        Para profundizar visualmente, este vídeo explica la idea con ejemplos sencillos.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/uPqK9W_wNKI?si=z_Xk0erbSSmQ_lM9"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      
+      <div class="entry-meta">
+        <span class="author">Autor: Roger A. Alighieri</span>
+        <span class="date">Publicado: 06/12/2025 – 09:43</span>
+        <span class="views" id="views-entrada1">👁 Lecturas: 0</span>
+      </div>
+      
+      <div class="reactions" data-entry="entrada1">
+        <button class="react" data-type="like">👍</button>
+        <span id="count-like-entrada1">0</span>
+        <button class="react" data-type="love">❤️</button>
+        <span id="count-love-entrada1">0</span>
+        <button class="react" data-type="secure">🔐</button>
+        <span id="count-secure-entrada1">0</span>
+      </div>
+      
+      </article>
+
+    <article id="entrada2">
+      <h2>Cómo Funciona: RSA, ECC y Algoritmos Representativos</h2>
+      <p>
+        Entre los algoritmos más usados están:
+      </p>
+      <ul>
+        <li><strong>RSA</strong>: Basado en la factorización de enteros. Genera claves (n, e, d) donde la seguridad
+          depende de la dificultad de factorizar n (producto de dos primos grandes).</li>
+        <li><strong>ECC</strong>: Basado en curvas elípticas. Ofrece seguridad equivalente a RSA con claves mucho más
+          pequeñas (ej. P-256 equivale aproximadamente a RSA-3072).</li>
+        <li><strong>ElGamal</strong> y <strong>Diffie–Hellman</strong>: Usados para intercambio de claves y cifrado
+          probabilístico.</li>
+      </ul>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/EllipticCurve.svg" alt="Curvas elípticas" />
+      <p>
+        El flujo general implica: <em>generación de par de claves → publicación de la clave pública → cifrado con la
+          pública → descifrado con la privada</em>. Para firmas, el emisor firma con su privada y cualquier receptor
+        verifica con la pública.
+      </p>
+      <p>
+        Aquí tienes una explicación técnica sobre por qué estas operaciones son difíciles de revertir sin la clave
+        privada.
+      </p>
+    </article>
+
+    <article id="entrada3">
+      <h2>Ventajas, Desventajas y Diferencias con Criptosistemas Simétricos</h2>
+      <p>
+        <strong>Ventajas:</strong>
+      </p>
+      <ul>
+        <li>Evita intercambio secreto de claves.</li>
+        <li>Permite firmas digitales y no repudio.</li>
+        <li>Escala mejor para sistemas con muchos participantes (no requiere O(n²) claves compartidas).</li>
+      </ul>
+      <p>
+        <strong>Desventajas:</strong>
+      </p>
+      <ul>
+        <li>Operaciones más costosas: cifrado/descifrado más lento que AES, por ejemplo.</li>
+        <li>Dependencia de parámetros seguros; mala implementación puede comprometer seguridad.</li>
+      </ul>
+      <p>
+        <strong>Diferencias clave con sistemas simétricos:</strong> En simétrico la misma clave cifra y descifra; en
+        asimétrico hay par de claves. En la práctica, ambos se combinan: asimétrico para intercambio de claves,
+        simétrico (AES) para cifrado de datos por su eficiencia.
+      </p>
+    </article>
+
+    <article id="entrada4">
+      <h2>Caso Práctico: RSA + AES en Transacciones Web</h2>
+      <p>
+        Un uso típico es HTTPS. Cuando el navegador se conecta a un servidor seguro, el servidor presenta un certificado
+        (que contiene su clave pública). El navegador verifica el certificado y usa la clave pública para establecer
+        un canal seguro (intercambio de claves). Después, el tráfico real se cifra con un algoritmo simétrico como AES
+        por eficiencia.
+      </p>
+      <p>
+        <strong>¿Dónde usarlo?</strong> En cualquier sistema que requiera confidencialidad y autenticidad: banca en
+        línea,
+        mensajería segura, firma de código y sistemas de identidad.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/uPqK9W_wNKI?si=z_Xk0erbSSmQ_lM9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>
+        <strong>Cómo implementarlo:</strong> Use librerías maduradas (OpenSSL, libsodium, WebCrypto API). Evite escribir
+        su propia criptografía desde cero.
+      </p>
+    </article>
+
+    <article id="entrada5">
+      <h2>Observaciones y Recomendaciones para Implementación</h2>
+      <p>
+        - Seleccionar tamaños de clave actuales: RSA ≥ 2048 bits (ideal 3072+), curvas ECC recomendadas: P-256,
+        P-384 o curvas certificadas según el estándar.
+      </p>
+      <p>
+        - Mantener bibliotecas actualizadas, usar módulos de hardware (HSM o Secure Enclave) cuando sea necesario y
+        proteger la clave privada con controles de acceso y cifrado en reposo.
+      </p>
+      <p>
+        - Evitar algoritmos obsoletos (p. ej. RSA con PKCS#1 v1.5 sin OAEP, o curvas no recomendadas). Realizar pruebas
+        de auditoría y revisión por pares.
+      </p>
+      <p>
+        - Para compatibilidad y rendimiento, combine asimétrico para establecimiento de sesión y simétrico para
+        cifrado de datos en bloque.
+      </p>
+    </article>
+
+    <section id="comentarios">
+      <h2>Comentarios</h2>
+      <script src="https://utteranc.es/client.js" repo="rogeralighieri/blog_cifrado_asimetrico" issue-term="pathname"
+        theme="github-light" crossorigin="anonymous" async></script>
+    </section>
+
+  </main>
+
+  <button id="topBtn" aria-label="Volver arriba">↑</button>
+
+  <footer>
+    <p>© 2025 Blog Criptografía - By Roger Rodriguez</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
